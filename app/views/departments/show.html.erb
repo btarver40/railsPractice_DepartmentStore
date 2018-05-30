@@ -1,0 +1,14 @@
+<h1>Department Store</h1>
+<div>
+  <div>
+    <div>
+      <p>Department Name: <%= @department.name %></p>
+    </div>
+    <div>
+      <%= link_to  'View Items', department_items_path(@department) %>
+      <%= link_to 'Edit Department', edit_department_path(@department) %>
+      <%= link_to 'Delete Department', department_path(@department.id), method: :delete %>
+      <%= link_to 'Back', departments_path(@department) %>
+    </div>
+  </div>
+

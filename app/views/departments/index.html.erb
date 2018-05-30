@@ -1,0 +1,9 @@
+<h1>Click a Department to View Content</h1>
+<%= link_to 'Create a New Department', new_department_path %>
+<ul>
+  <% @departments.each do |department| %>
+    <li><%= link_to department.name, department %></li>
+  <% end %>
+</ul>
+
+<!--looping through the department instance and linking to'Departments' link and passing through the variable of department
