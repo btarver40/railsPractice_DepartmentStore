@@ -1,0 +1,8 @@
+<h1>Click on a comment</h1>
+<%= link_to  "Create New Comment", new_item_comment_path(@item) %>
+<%= link_to "Back to Items", items_path(@item) %>
+<ul>
+<% @comments.each do |comment| %>
+<li><%=  link_to  comment.author, [@item, comment]%></li>
+<%end%>
+</ul>

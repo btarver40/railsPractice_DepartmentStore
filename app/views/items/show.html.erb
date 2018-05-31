@@ -1,6 +1,11 @@
 <h1><%= @department.name %> - <%= @item.name %></h1>
 <h2><%= @item.body %></h2>
 <h2><%=@item.rating %><h2>
+<h2>Comments<h2>
+    <% @item.comments.each do |comment| %>
+    <%= render 'comments/comment', {comment: comment} %>
+    <%= link_to  "Comments", item_comments_path(@comment) %>
+    <%end%>
 <%= link_to 'Edit Item', edit_department_item_path([@department, @item]) %>
 <%= link_to 'Delete Item', [@department, @item], method: :delete %>
 <%= link_to 'Back To Items', department_items_path(@department) %>

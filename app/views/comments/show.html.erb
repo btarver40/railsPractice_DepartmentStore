@@ -1,0 +1,19 @@
+<div>
+  <div>
+    <div>
+      <p>Comment Text: <%= @comment.body %></p>
+      <h2>Comments<h2>
+      <% @item.comments.each do |comment| %>
+      <%= render 'comments/comment', {comment: comment} %>
+      <%= link_to  "Comments", item_comments_path(@comment) %>
+      <%end%>
+    </div>
+    <div>
+
+      <%= link_to  'View Comments', item_comments_path(@item) %>
+      <%= link_to 'Edit Comment', edit_item_comment_path(@item) %>
+      <%= link_to 'Delete Comment', item_path(@item.id), method: :delete %>
+      <%= link_to 'Back', items_path(@item) %>
+    </div>
+  </div>
+</div>
